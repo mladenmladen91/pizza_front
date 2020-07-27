@@ -1,0 +1,13 @@
+.Pizza{
+    margin-bottom: 20px;
+}
+.Pizza .title{
+    font-size: 17px;
+    color: #ffff;
+}
+.Pizza span{
+    color: #ffff;
+    font-weight: bold;
+    margin-left: 15px;
+    cursor: pointer;
+}

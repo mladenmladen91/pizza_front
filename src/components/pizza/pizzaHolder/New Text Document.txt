@@ -1,0 +1,54 @@
+import React, { Component } from 'react';
+import Aux from '../../hoc/Aux';
+import Pizza from '../pizzaContent/Pizza';
+import './PizzaHolder.css';
+
+class PizzaHolder extends Component {
+    state = {
+        order_items: [],
+        name: "test",
+        city: "",
+        address: "",
+        phone: "",
+        email: ""
+    }
+
+
+    addIngredientHandler = (id, max) => {
+        let orderCopy = [
+            ...this.state.order_items
+        ];
+        let orderNew = {
+            id: id,
+            amount: 1
+        }
+
+        console.log(orderCopy.length);
+        if (orderCopy.length > 0) {
+
+            console.log("imaa");
+        } else {
+            orderCopy.push(orderNew);
+        }
+
+        this.setState({
+            order_items: orderCopy
+        });
+    }
+    render() {
+
+        return (
+            <Aux>
+
+                <div className="Container">
+                    <h1>Pizza menu</h1>
+                    <div>
+                        <Pizza add={this.addIngredientHandler} key="1" id="2" max="6" name="Margarita" />
+                    </div>
+                </div>
+            </Aux>
+        );
+    }
+}
+
+export default PizzaHolder;
