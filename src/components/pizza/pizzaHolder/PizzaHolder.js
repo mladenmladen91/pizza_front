@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Aux from '../../hoc/Aux';
 import Pizza from '../pizzaContent/Pizza';
 import OrderSummary from '../../orderSummary/OrderSummary';
 import './PizzaHolder.css';
@@ -173,29 +172,26 @@ class PizzaHolder extends Component {
         }
 
         return (
-            <Aux>
+            <div className="Container">
+                <h1>Pizza menu</h1>
+                <div>
+                    {pizzas}
+                </div>
 
-                <div className="Container">
-                    <h1>Pizza menu</h1>
-                    <div>
-                        {pizzas}
-                    </div>
+                {orderSummary}
 
-                    {orderSummary}
-
-                    <div>
-                        <form className="OrderForm" onSubmit={this.handleSubmit}>
-                            <input type="text" name="name" placeholder="Name" required onChange={this.myChangeHandler} />
-                            <input type="email" name="email" placeholder="E-mail" required onChange={this.myChangeHandler} />
-                            <input type="text" name="phone" placeholder="Phone" required onChange={this.myChangeHandler} />
-                            <input type="text" name="city" placeholder="City" required onChange={this.myChangeHandler} />
-                            <input type="text" name="address" placeholder="Address" required onChange={this.myChangeHandler} />
-                            <button>Order</button>
-                        </form>
-                    </div >
-
+                <div>
+                    <form className="OrderForm" onSubmit={this.handleSubmit}>
+                        <input type="text" name="name" placeholder="Name" required onChange={this.myChangeHandler} />
+                        <input type="email" name="email" placeholder="E-mail" required onChange={this.myChangeHandler} />
+                        <input type="text" name="phone" placeholder="Phone" required onChange={this.myChangeHandler} />
+                        <input type="text" name="city" placeholder="City" required onChange={this.myChangeHandler} />
+                        <input type="text" name="address" placeholder="Address" required onChange={this.myChangeHandler} />
+                        <button>Order</button>
+                    </form>
                 </div >
-            </Aux >
+
+            </div >
         );
     }
 }
